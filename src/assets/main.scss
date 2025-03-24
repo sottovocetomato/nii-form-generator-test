@@ -1,0 +1,91 @@
+@use "vars" as *;
+@import "base";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  justify-content: space-between;
+}
+#container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+h2 {
+  margin-bottom: $spacer;
+}
+header,
+footer {
+  height: 64px;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: $spacer calc($spacer * 15);
+  a {
+    font-weight: 500;
+    color: white;
+  }
+}
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  padding: 0 $spacer;
+  width: 100%;
+  height: 48px;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  margin-bottom: $spacer;
+  &:focus {
+    border: none;
+    outline: 2px solid $border-color-focus;
+    outline-offset: -2px;
+  }
+}
+input[type="checkbox"] {
+  width: 24px;
+  aspect-ratio: 1/1;
+  margin: $spacer 0;
+}
+textarea {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+}
+label {
+  font-weight: 500;
+}
+.checkbox-wrap {
+  label {
+    display: inline-flex;
+    flex-direction: column;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+button {
+  width: 150px;
+  height: 48px;
+  border-radius: 20px;
+  background-color: $bg-button;
+  color: white;
+  outline: none;
+  border: none;
+  margin-right: $spacer;
+  &:hover {
+    cursor: pointer;
+    background-color: color-mix(in srgb, $bg-button 85%, transparent);
+  }
+  &:focus {
+    cursor: pointer;
+    background-color: color-mix(in srgb, $bg-button 95%, transparent);
+  }
+}
